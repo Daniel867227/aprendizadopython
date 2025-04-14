@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Usuarios:</p>
+    <a href="{% url 'index' %}">Voltar</a>
+    <ul>
+        {% for usuario in usuarios %}
+        <li>
+            Nome:
+
+            {{usuario.nomes}} ,
+            
+            banda:
+            {{usuario.bandas}} ,
+            
+            filme:
+            {{usuario.filmes}} 
+
+            <a href="{% url 'edit_usuarios' usuario.id % } ">Editar</a>
+        </li>
+        {% empty %}
+            <p>Não há informações </p>
+
+
+        {% endfor %}
+    </ul>
+</body>
+</html>
