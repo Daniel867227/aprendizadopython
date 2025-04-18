@@ -21,7 +21,8 @@
             filme:
             {{usuario.filmes}} 
 
-            <a href="{% url 'edit_usuarios' usuario.id % } ">Editar</a>
+            <a href="{% url 'edit_usuarios' usuario.id %}">Editar</a>
+            <a href="{% url 'delete_usuarios' usuario.id %}">Deletar</a>
         </li>
         {% empty %}
             <p>Não há informações </p>
